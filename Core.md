@@ -41,3 +41,38 @@ If on-prem storage is a database (Hive, PostgreSQL, MySQL, Oracle, SQL Server), 
 An optimized custom CPU query engine made by Databricks
 It sits underneath Databricks SQL and acts as an alternative to Spark's execution engine.
 It can support other processes beside Databricks SQL as the engine
+It is meant more for Data Engineering that ML so SQL heavy compute or Delta Lake compute.
+Photon accelerates vectorized cpu operations like CUDA does for gpu tensors.
+CUDA is like photon and spark combined actually.
+Photon is intranode while Spark is distrbuted.
+
+## Delta Live Table
+
+A pipeline from ingestion to Delta Lakehouse
+
+Can be used in place of Kafka.
+
+If you can tolerate some data loss: Direct ingestion
+If you need guaranteed delivery: Kafka provides better guarantees
+
+Kafka is decoupling of data producers and consumers
+DLT - Direct ingestion using Databricks Auto Loader
+
+DLT cannot write to external tables
+
+Structured Streaming is the processing engine of DLT
+
+```sql
+-- Write to DLT
+CREATE OR REFRESH LIVE TABLE bronze_transactions
+AS SELECT * FROM bronze_df
+```
+
+## CDC
+
+Change data capture is used to track deltas.
+
+You can connect kafka to DLT for CDC for streaming
+You can connect kafka to AutoLoader for CDC for batch
+
+You will still need Qlik or DMS upstream to track the changes.
