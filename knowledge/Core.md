@@ -76,3 +76,19 @@ You can connect kafka to DLT for CDC for streaming
 You can connect kafka to AutoLoader for CDC for batch
 
 You will still need Qlik or DMS upstream to track the changes.
+
+## Lakehouse
+
+The pillars “Data and AI Governance” and “Interoperability and Usability” cover concerns specific to the lakehouse.
+
+## Unity Catalog
+
+Data linearage, Delta Sharing, Data Governance
+
+Can be exported to Enterprise Data Governance lie CollibraDQ
+
+## Autoloader
+
+Autoloader can be called using spark.readStream.format("cloudFiles")
+
+AutoLoader only works with structuredStreaming so readStream is required and not read.

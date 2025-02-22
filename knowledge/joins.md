@@ -15,7 +15,7 @@ There are many types of joins
 Returns only the inner row that match with on foreign key
 
 - All the columns will be returned
-- Only rows will be omitted
+- Only non-matching rows will be omitted
 
 ## Left join
 

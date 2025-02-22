@@ -16,7 +16,7 @@ import mlflow
 import openai
 import os
 
-os.environ["OPENAI_API_KEY"] = "sssss"
+os.environ["OPENAI_API_KEY"] = ""
 # you must set the OPENAI_API_KEY environment variable
 assert (
     "OPENAI_API_KEY" in os.environ
